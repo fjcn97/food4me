@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Pratos de carne</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="../css/style.css">
+    </head>
+    <body onload="loadDishes('tableMeatDishes', 'meat'); disableCartBtn();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="../index.html">Food4Me</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../auth/register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../auth/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../help.html">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+        <div class="container">
+            <h1 class="text-center">Pratos de carne</h1>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead id="changeTHead" class="text-center">
+                        <th>Adicionar / Remover aos / dos favoritos</th>
+                        <th>Adicionar ao carrinho</th>
+                        <th>Nome</th>
+                        <th>Loja</th>
+                        <th>Preço original (€)</th>
+                        <th>Desconto (%)</th>
+                        <th>Preço com desconto (€)</th>
+                        <th>Validade da promoção (DD/MM/AAAA) [inclusive]</th>
+                    </thead>
+                    <tbody id="tableMeatDishes"></tbody>
+                </table>
+            </div>
+            <button id="cartBtn" class="btn btn-raised" onclick="location.href='../order/cart.html';"><img src="../css/icons8-shopping-cart-filled-17.png"> Carrinho</button>
+        </div>
+        <img class="back" src="../css/icons8-back-arrow-filled-50.png" onclick="window.location.href='../index.html';">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+        <script src="../scripts/moment.js"></script>
+        <script src="../scripts/scripts.js"></script>
+    </body>
+</html>

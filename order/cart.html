@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Carrinho</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="../css/style.css">
+    </head>
+    <body onload="loadAddress();loadCart();">
+        <nav class='navbar navbar-expand-lg navbar-light bg-light'><a class='navbar-brand' href='../index.html'>Food4Me</a><button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'><span class='navbar-toggler-icon'></span></button><div class='collapse navbar-collapse' id='navbarSupportedContent'><ul class='navbar-nav mr-auto'><li class='nav-item'><a class='nav-link' href='../index.html'>Página Inicial</a></li><li class='nav-item'><a class='nav-link favoriteDrinksFoods' href='../favorites/favoriteDrinksFoods.html'>Bebidas / comidas favoritas</a></li><li class='nav-item'><a class='nav-link favoriteOrders' href='../favorites/favoriteOrders.html'>Encomendas favoritas</a></li><li class='nav-item'><a class='nav-link orders' href='../order/orders.html'>Histórico de encomendas</a></li><li class='nav-item'><a class='nav-link' href='../profile.html'>Perfil</a></li><li class='nav-item'><a class='nav-link text-danger' style='cursor: pointer' onclick='logout();'>Logout</a></li><li class='nav-item'><a class='nav-link' href='../help.html'>Ajuda</a></li></ul></div></nav>
+        
+        <div class="container">
+            <h1 class="text-center">Carrinho</h1>
+            
+            <form name="scheduleForm">
+                <div class="form-group">
+                    <label for="morada">Morada (*)</label>
+                    <input class="form-control" type="text" id="address" placeholder="Rua das Amoras, nº 23, 2º ESQ" maxlength="64" required>
+                </div>
+                <div class="form-group">
+                    <label for="dig4">Código Postal (*)</label>
+                    <p><input class="form-control" type="text" id="dig4" maxlength="4" placeholder="2798" required> - <input class="form-control" type="text" id="dig3" maxlength="3" placeholder="234" required></p>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../css/icons8-deliver-food-17.png"> Encomendar</button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#" onclick="purchase('payNow');">Pagar já</a>
+                      <a class="dropdown-item" href="#" onclick="purchase('payAfter');">Pagar quando receber</a>
+                    </div>
+                  </div>
+                </div>
+            </form>
+            <p> * Campo obrigatório </p>
+            
+            <button class="btn btn-raised" onclick="addToFavoriteOrders();"><img src="../css/icons8-christmas-star-17.png"> Adicionar como encomenda favorita</button>
+            <button class="btn btn-raised" onclick="location.href='schedule.html';"><img src="../css/icons8-schedule-filled-17.png"> Agendar encomenda</button>
+            <button class="btn btn-raised btn-danger" onclick="cancelOrder();"><img src="../css/icons8-clear-shopping-cart-filled-17.png"> Esvaziar o carrinho</button>
+            <br><br>
+            <button class="btn btn-raised" onclick="location.href='../index.html';"><img src='../css/icons8-add-shopping-cart-filled-17.png'> Continuar a adicionar</button>
+            <div class="form-group">
+                <label for="total">Preço total</label>
+                <input id="total" class="form-control" style="text-align: right;" readonly>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead class="text-center">
+                        <th>Remover do carrinho</th>
+                        <th>Nome</th>
+                        <th>Loja</th>
+                        <th>Preço original (€)</th>
+                        <th>Desconto (%)</th>
+                        <th>Preço com desconto (€)</th>
+                        <th>Validade da promoção (DD/MM/AAAA) [inclusive]</th>
+                    </thead>
+                    <tbody id="tableCart"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+        <script src="../scripts/moment.js"></script>
+        <script src="../scripts/scripts.js"></script>
+    </body>
+</html>

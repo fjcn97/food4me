@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ajuda</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="css/style.css">
+    </head>
+    <body onload="toHelpPage();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="index.html">Food4Me</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/login.html">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+        <div class="container">
+            <h1 class="text-center">Ajuda</h1>
+            <br>
+            <div id="helpText">
+                <p class="indent"><b>No Chrome, em qualquer página, pode ver o que está a acontecer por detrás da aplicação. Comece por pressionar a tecla F12. Procure pelo item "Application". Clique duas vezes em "Local Storage". Depois, clique em "file://".</b></p>
+                <p class="indent">Inicialmente, tem quatro contas disponíveis para serem usadas: A do administrador ("admin"), a de um utilizador comum ("fjcn97") e a de duas lojas ("restaurante_estrela" e "tasca_5_estrelas").</p>
+                <p class="indent">As respetivas <i>passwords</i> são o primeiro valor ("Value") associado às chaves ("Key") destas contas. Com estas palavras-passe, já pode iniciar sessão nas contas.</p>
+                <p class="indent">O item "types" possui os tipos de pratos que as lojas poderão adicionar.</p>
+                <p class="indent">Os botões da página inicial só ficarão ativos assim que iniciar sessão numa conta de loja e começar a adicionar pratos.</p>
+                <p class="indent">Para adicionar uma loja, inicie sessão na conta de administrador e clique em "REGISTAR LOJA". Como administrador pode, também, adicionar alergias. Assim que este inserir uma na aplicação, passará a ser selecionável no momento de registo de um utilizador. Poderá alterar as alergias que um utilizador possui na página do "Perfil". Sempre que um utilizador possuir alergia a peixe, o botão "VER PRATOS DE PEIXE" encontrar-se-á desativado para ele.</p>
+                <p class="indent">Com uma conta de loja, assim que inserir, por exemplo, uma bebida, poderá aplicar-lhe um desconto. Para tal, vá à página das bebidas e clique no botão "APLICAR". Depois, na página inicial, clique em "INSERIR DESCONTO". Aqui conseguirá ver os pratos aos quais elegeu, previamente, para desconto.</p>
+                <p class="indent">Na página do carrinho, se clicar na <em>dropdown</em> "ENCOMENDAR", significa que receberá a encomenda o mais cedo possível. Se, porventura, na página de agendar encomenda, clicar na <em>dropdown</em> "AGENDAR", receberá a encomenda na data e hora que indicou.
+                <p class="indent">Ambas as <em>dropdowns</em> têm como opções "Pagar já" e "Pagar quando receber". Se clicar em "Pagar já", receberá o recibo digitalmente. Se clicar na outra opção, pagará quando a encomenda chegar.</p>
+                <p class="indent">Numa conta que tenha criado (e não que já venha criada), poderá alterar o respetivo perfil, clicando no item da barra de navegação "PERFIL", após ter iniciado sessão.</p>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+        <script src="scripts/moment.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

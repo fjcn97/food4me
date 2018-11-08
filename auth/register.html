@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Registo</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="../css/style.css">
+    </head>
+    
+    <body onload="checkRegister();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="../index.html">Food4Me</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../help.html">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        <div class="container">
+            <h1 class="text-center">Registo</h1>
+            <form action="" method="post" onsubmit="return register();">
+                <div class="form-group">
+                    <label for="username" class="label">Nome de utilizador (*)</label>
+                    <input class = "form-control" type="text" id="username" placeholder="dsp93" maxlength="12" onkeypress="preventWhiteSpaces(event);" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">Password (*)</label>
+                    <input class = "form-control" type="password" id="pass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required>
+                </div>
+                <div class="form-group">
+                    <label for="passConf">Confirmar password (*)</label>
+                    <input class = "form-control" type="password" id="passConf" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required />
+                <span id='passMessage'></span>
+                </div>
+
+                <div id="message">
+                    <h6>A password deve conter, pelo menos:</h6>
+                    <p id="capital" class="invalid">Uma letra maiúscula</p>
+                    <p id="letter" class="invalid">Uma letra minúscula</p>
+                    <p id="number" class="invalid">Um número</p>
+                    <p id="length" class="invalid">Oito caracteres e, no máximo, doze caracteres</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="label">Nome completo (*)</label>
+                    <input class = "form-control" type="text" id="name" placeholder="Daniel Silva Pereira" onkeydown="preventNumbers(event);" onkeyup="preventNumbers(event);" maxlength="64" required>
+                </div>
+                <div class="form-group">
+                    <label for="dataNasc">Data de nascimento (*)</label>
+                    <input class = "form-control" type="date" id="dateOfBirth" value="1993-05-04" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email (*)</label>
+                    <input class = "form-control" type="email" id="email" placeholder="dsp93@gmail.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Telemóvel (*)</label>
+                    <input class = "form-control" type="text" pattern=".{9}" maxlength="9" placeholder='912345678' id="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="morada">Morada (*)</label>
+                    <input class = "form-control" type="text" id="address" placeholder="Rua das Amoras, nº 23, 2º ESQ" maxlength="64" required>
+                </div>
+                <div class="form-group">
+                    <label for="dig4">Código postal (*)</label>
+                    <p><input class = "form-control" type="text" id="dig4" maxlength="4" placeholder="2798" required> - <input class = "form-control" type="text" id="dig3" maxlength="3" placeholder="234" required></p>
+                </div>
+                <div id = "allergies" class="checkbox">
+                    Possuo intolerância alimentar a:
+                    <br>
+                 </div>
+                <br>
+                <button class="btn btn-raised" type="submit"><img src="../css/icons8-add-user-male-17.png"> Registar</button>
+            </form>
+            <p> * Campo obrigatório </p>
+        </div>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+            <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+            <script src="../scripts/moment.js"></script>
+            <script src="../scripts/scripts.js"></script>
+            <script src="../scripts/registerValidations.js"></script>
+    </body>
+</html>
+
+    

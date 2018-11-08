@@ -1,0 +1,74 @@
+/* This whole block is for the register and registerStore pages... */
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    position: relative;
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 0 1.4em !important;
+}
+
+#message p {
+    padding: 0 35px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+/* that ends here!!! */
+
+div>button, input {
+    width: 325.56px;
+    margin-top: 1%;
+}
+
+form>input, form>button {
+    width: 325.56px;
+}
+
+td>button {
+    width: 125.47px;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+/* To style the back button */
+.back {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    cursor: pointer;
+}
+
+/* To indent paragraphs of the help text */
+.indent {
+    text-indent: 5%;
+}
+
+h1 {
+    border: 1px solid lightgrey;
+}
+
+#helpText {
+    border: 1px solid lightgrey;
+    padding: 3%;
+}

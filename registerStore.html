@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Registar loja de entrega de comida</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="css/style.css">
+    </head>
+    
+    <body onload="checkIfItIsAdmin();">
+        <nav class='navbar navbar-expand-lg navbar-light bg-light'><a class='navbar-brand' href='index.html'>Food4Me</a><button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'><span class='navbar-toggler-icon'></span></button><div class='collapse navbar-collapse' id='navbarSupportedContent'><ul class='navbar-nav mr-auto'><li class='nav-item'><a class='nav-link' href='index.html'>Página Inicial</a></li><li class='nav-item'><a class='nav-link favoriteDrinksFoods' href='favorites/favoriteDrinksFoods.html'>Bebidas / comidas favoritas</a></li><li class='nav-item'><a class='nav-link favoriteOrders' href='favorites/favoriteOrders.html'>Encomendas favoritas</a></li><li class='nav-item'><a class='nav-link orders' href='./order/orders.html'>Histórico de encomendas</a></li><li class='nav-item'><a class='nav-link' href='profile.html'>Perfil</a></li><li class='nav-item'><a class='nav-link text-danger' style='cursor: pointer' onclick='logout();'>Logout</a></li><li class='nav-item'><a class='nav-link' href='help.html'>Ajuda</a></li></ul></div></nav>
+        
+        <div class="container">
+            <h1 class="text-center">Registar loja de entrega de comida</h1>
+            <form action="" method="post" onsubmit="return registerStore();">
+                <div class="form-group">
+                    <label for="username" class="label">Nome de "utilizador" (*)</label>
+                    <input class = "form-control" type="text" id="username" placeholder="telepizza" maxlength="25" onkeypress="preventWhiteSpaces(event);" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pass">Password (*)</label>
+                    <input class = "form-control" type="password" id="pass" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required>
+                </div>
+                <div class="form-group">
+                    <label for="passConf">Confirmar password (*)</label>
+                    <input class = "form-control" type="password" id="passConf" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}" title="Deve conter, pelo menos, uma letra maiúscula, uma minúscula, um número, oito caracteres e, no máximo, doze caracteres" onkeypress="preventWhiteSpaces(event);" onfocus="showMessageBox();" onblur="hideMessageBox();" onkeyup = "changeMessageBox(this.id);verifyPasswords();" required />
+                <span id='passMessage'></span>
+                </div>
+
+                <div id="message">
+                    <h6>A password deve conter, pelo menos:</h6>
+                    <p id="capital" class="invalid">Uma letra maiúscula</p>
+                    <p id="letter" class="invalid">Uma letra minúscula</p>
+                    <p id="number" class="invalid">Um número</p>
+                    <p id="length" class="invalid">Oito caracteres e, no máximo, doze caracteres</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="name" class="label">Nome (*)</label>
+                    <input class = "form-control" type="text" id="name" placeholder="Telepizza" maxlength="64" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel">Telefone (*)</label>
+                    <input class = "form-control" type="text" pattern=".{9}" maxlength="9" placeholder='214147874' id="tel" required>
+                </div>
+                <div class="form-group">
+                    <label for="morada">Morada (*)</label>
+                    <input class = "form-control" type="text" id="address" placeholder="Rua Marquês de Pombal, nº 31" maxlength="64" required>
+                </div>
+                <div class="form-group">
+                    <label for="4digitos">Código postal (*)</label>
+                    <p><input class = "form-control" type="text" id="dig4" maxlength="4" placeholder="3222" required> - <input class = "form-control" type="text" id="dig3" maxlength="3" placeholder="232" required></p>
+                </div>
+                <div class="form-group">
+                    <label>País</label>
+                    <input class="form-control" placeholder="Portugal" readonly>
+                </div>
+                
+                <button class="btn btn-raised" type="submit"><img src='css/icons8-small-business-filled-17.png'> Registar loja</button>
+            </form>
+            <p> * Campo obrigatório </p>
+        </div>
+        
+        <img class="back" src="css/icons8-back-arrow-filled-50.png" onclick="window.location.href='index.html';">
+        
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+            <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+            <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+            <script src="scripts/moment.js"></script>
+            <script src="scripts/scripts.js"></script>
+            <script src="scripts/registerValidations.js"></script>
+    </body>
+</html>
+
+    

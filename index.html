@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Página Inicial</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="css/style.css">
+    </head>
+    <body onload="toIndexPage(); disableBtnsByAllergies(); disableSeeDishesBtnsUser(); loadDiscounts();">
+        <div id="changeNav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="#">Food4Me</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/register.html">Registar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="auth/login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+        
+        <div id="changeBtns" class="text-center"></div>
+
+        <div class="text-center">
+            <button class="btn btn-raised drink" onclick="location.href='drinksFoods/drinks.html';"><img src="css/icons8-bar-filled-17.png"> Ver bebidas</button>
+            <button class="btn btn-raised other" onclick="location.href='drinksFoods/others.html';"><img src="css/icons8-croissant-filled-17.png"> Ver outros</button>
+        </div>
+        
+        <div class="text-center">
+            <button class="btn btn-raised meat" onclick="location.href='drinksFoods/meatDishes.html';"><img src="css/icons8-meat-filled-17.png"> Ver pratos de carne</button>
+            <button class="btn btn-raised fish" onclick="location.href='drinksFoods/fishDishes.html';"><img src="css/icons8-fish-food-17.png"> Ver pratos de peixe</button>
+        </div>
+        
+        <div class="text-center">
+            <button class="btn btn-raised vegetarian" onclick="location.href='drinksFoods/vegetarianDishes.html';"><img src="css/icons8-vegetarian-food-filled-17.png"> Ver pratos vegetarianos</button>
+            <button class="btn btn-raised dessert" onclick="location.href='drinksFoods/desserts.html';"><img src="css/icons8-cinnamon-roll-filled-17.png"> Ver sobremesas</button>
+        </div>
+        <br>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead class="text-center">
+                        <th>Nome</th>
+                        <th>Loja</th>
+                        <th>Preço original (€)</th>
+                        <th>Desconto (%)</th>
+                        <th>Preço com desconto (€)</th>
+                        <th>Validade da promoção (DD/MM/AAAA) [inclusive]</th>
+                    </thead>
+                    <tbody id="tableDiscounts"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+        <script src="scripts/moment.js"></script>
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>

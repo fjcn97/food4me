@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Encomendas favoritas</title>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css"  href="../css/style.css">
+    </head>
+    <body onload="loadFavoriteOrders();">
+        <nav class='navbar navbar-expand-lg navbar-light bg-light'><a class='navbar-brand' href='../index.html'>Food4Me</a><button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'><span class='navbar-toggler-icon'></span></button><div class='collapse navbar-collapse' id='navbarSupportedContent'><ul class='navbar-nav mr-auto'><li class='nav-item'><a class='nav-link' href='../index.html'>Página Inicial</a></li><li class='nav-item'><a class='nav-link favoriteDrinksFoods' href='../favorites/favoriteDrinksFoods.html'>Bebidas / comidas favoritas</a></li><li class='nav-item'><a class='nav-link favoriteOrders active' href='../favorites/favoriteOrders.html'>Encomendas favoritas</a></li><li class='nav-item'><a class='nav-link orders' href='../order/orders.html'>Histórico de encomendas</a></li><li class='nav-item'><a class='nav-link' href='../profile.html'>Perfil</a></li><li class='nav-item'><a class='nav-link text-danger' style='cursor: pointer' onclick='logout();'>Logout</a></li><li class='nav-item'><a class='nav-link' href='../help.html'>Ajuda</a></li></ul></div></nav>
+        
+        <div class="container">
+            <h1 class="text-center">Encomendas favoritas</h1>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered table-striped">
+                    <thead class="text-center">
+                        <th>Remover dos favoritos</th>
+                        <th>Menu</th>
+                    </thead>
+                    <tbody id="tableFavoriteOrders"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+        <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+        <script src="../scripts/moment.js"></script>
+        <script src="../scripts/scripts.js"></script>
+    </body>
+</html>
